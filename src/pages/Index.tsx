@@ -46,11 +46,11 @@ const Index = () => {
           </div>
         </Card>
 
-        <Card className="p-8 md:p-10 shadow-xl border-0 bg-white/95 backdrop-blur">
-          <div className="mb-8">
-            <div className="flex justify-between items-baseline mb-4">
-              <label className="text-xl font-semibold text-[#1A1F2C]">Сумма</label>
-              <span className="text-3xl font-bold text-[#1A1F2C]">
+        <Card className="p-5 md:p-10 shadow-xl border-0 bg-white/95 backdrop-blur">
+          <div className="mb-6 md:mb-8">
+            <div className="flex justify-between items-baseline mb-3 md:mb-4">
+              <label className="text-lg md:text-xl font-semibold text-[#1A1F2C]">Сумма</label>
+              <span className="text-2xl md:text-3xl font-bold text-[#1A1F2C]">
                 {amount.toLocaleString('ru-RU')} ₽
               </span>
             </div>
@@ -68,10 +68,10 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="mb-8">
-            <div className="flex justify-between items-baseline mb-4">
-              <label className="text-xl font-semibold text-[#1A1F2C]">Срок</label>
-              <span className="text-3xl font-bold text-[#1A1F2C]">{days} дней</span>
+          <div className="mb-6 md:mb-8">
+            <div className="flex justify-between items-baseline mb-3 md:mb-4">
+              <label className="text-lg md:text-xl font-semibold text-[#1A1F2C]">Срок</label>
+              <span className="text-2xl md:text-3xl font-bold text-[#1A1F2C]">{days} дней</span>
             </div>
             <Slider
               value={[days]}
@@ -87,21 +87,21 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="bg-gradient-to-br from-[#F5F5FA] to-[#E8EBF5] p-6 rounded-2xl">
-              <p className="text-sm text-muted-foreground mb-2">Возвращаете</p>
-              <div className="flex items-baseline gap-2">
-                <span className="text-2xl text-muted-foreground line-through">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
+            <div className="bg-gradient-to-br from-[#F5F5FA] to-[#E8EBF5] p-5 md:p-6 rounded-2xl">
+              <p className="text-xs md:text-sm text-muted-foreground mb-2">Возвращаете</p>
+              <div className="flex flex-col md:flex-row md:items-baseline gap-2">
+                <span className="text-lg md:text-2xl text-muted-foreground line-through">
                   {returnAmount.toLocaleString('ru-RU')} ₽
                 </span>
-                <span className="text-4xl font-bold text-[#FFD93D] bg-[#FFD93D]/20 px-4 py-1 rounded-xl">
+                <span className="text-3xl md:text-4xl font-bold text-[#FFD93D] bg-[#FFD93D]/20 px-3 md:px-4 py-1 rounded-xl inline-block w-fit">
                   {amount.toLocaleString('ru-RU')} ₽
                 </span>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-[#F5F5FA] to-[#E8EBF5] p-6 rounded-2xl">
-              <p className="text-sm text-muted-foreground mb-2">Дата возврата</p>
-              <p className="text-3xl font-bold text-[#1A1F2C]">
+            <div className="bg-gradient-to-br from-[#F5F5FA] to-[#E8EBF5] p-5 md:p-6 rounded-2xl">
+              <p className="text-xs md:text-sm text-muted-foreground mb-2">Дата возврата</p>
+              <p className="text-2xl md:text-3xl font-bold text-[#1A1F2C]">
                 {new Date(Date.now() + days * 24 * 60 * 60 * 1000).toLocaleDateString('ru-RU', {
                   day: 'numeric',
                   month: 'long',
@@ -111,21 +111,21 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4">
             <Button 
-              className="w-full bg-[#0066FF] hover:bg-[#0052CC] text-white py-7 text-lg rounded-2xl shadow-lg transition-all hover:scale-[1.02] font-semibold"
+              className="w-full bg-[#0066FF] hover:bg-[#0052CC] text-white py-5 md:py-7 text-base md:text-lg rounded-2xl shadow-lg transition-all hover:scale-[1.02] font-semibold"
             >
-              Получить через <span className="ml-2">гос</span><span className="text-red-500">услуги</span>
+              Получить через <span className="ml-1 md:ml-2">гос</span><span className="text-red-500">услуги</span>
             </Button>
             <Button 
               variant="outline"
-              className="w-full border-2 border-[#FFD93D] bg-white hover:bg-[#FFD93D]/10 text-[#1A1F2C] py-7 text-lg rounded-2xl transition-all hover:scale-[1.02] font-semibold"
+              className="w-full border-2 border-[#FFD93D] bg-white hover:bg-[#FFD93D]/10 text-[#1A1F2C] py-5 md:py-7 text-base md:text-lg rounded-2xl transition-all hover:scale-[1.02] font-semibold"
             >
               Получить бесплатно
             </Button>
           </div>
 
-          <button className="w-full mt-6 text-primary hover:underline text-base">
+          <button className="w-full mt-5 md:mt-6 text-primary hover:underline text-sm md:text-base">
             Что если я не успею вернуть заём вовремя?
           </button>
         </Card>
