@@ -291,12 +291,12 @@
           </div>
         </div>
         
-        <button class="calc-button calc-button-primary">
+        <a href="https://tuchkafinance.ru/applicationform" target="_blank" rel="noopener noreferrer" class="calc-button calc-button-primary" style="text-decoration: none; display: block; text-align: center;">
           Получить через госуслуги
-        </button>
-        <button class="calc-button calc-button-secondary">
+        </a>
+        <a href="https://tuchkafinance.ru/applicationform" target="_blank" rel="noopener noreferrer" class="calc-button calc-button-secondary" style="text-decoration: none; display: block; text-align: center;">
           Получить бесплатно
-        </button>
+        </a>
       </div>
     `;
     

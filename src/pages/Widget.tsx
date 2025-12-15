@@ -88,15 +88,21 @@ const Widget = () => {
 
         <div className="space-y-3">
           <Button 
+            asChild
             className="w-full bg-[#0066FF] hover:bg-[#0052CC] text-white py-5 text-base md:text-lg rounded-2xl shadow-lg transition-all hover:scale-[1.02] font-semibold"
           >
-            Получить через <span className="ml-1">гос</span><span className="text-red-500">услуги</span>
+            <a href="https://tuchkafinance.ru/applicationform" target="_blank" rel="noopener noreferrer">
+              Получить через <span className="ml-1">гос</span><span className="text-red-500">услуги</span>
+            </a>
           </Button>
           <Button 
+            asChild
             variant="outline"
             className="w-full border-2 border-[#FFD93D] bg-white hover:bg-[#FFD93D]/10 text-[#1A1F2C] py-5 text-base md:text-lg rounded-2xl transition-all hover:scale-[1.02] font-semibold"
           >
-            Получить бесплатно
+            <a href="https://tuchkafinance.ru/applicationform" target="_blank" rel="noopener noreferrer">
+              Получить бесплатно
+            </a>
           </Button>
         </div>
       </Card>
