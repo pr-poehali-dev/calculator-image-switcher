@@ -130,7 +130,7 @@ const Index = () => {
           </button>
         </Card>
 
-        <Card className="mt-8 p-8 md:p-10 shadow-xl border-0 bg-white/95 backdrop-blur">
+        <Card className="mt-8 p-8 md:p-10 shadow-xl border-0 bg-white/95 backdrop-blur hidden md:block">
           <div className="flex items-start gap-4 mb-6">
             <div className="bg-primary/10 p-3 rounded-xl">
               <Icon name="FileText" size={28} className="text-primary" />
