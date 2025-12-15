@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
@@ -7,6 +7,19 @@ import Icon from "@/components/ui/icon";
 const Index = () => {
   const [amount, setAmount] = useState(10000);
   const [days, setDays] = useState(10);
+  const [bannerImage, setBannerImage] = useState('https://cdn.poehali.dev/projects/00727451-82f8-48c2-bd07-f013e34b3db1/files/66b29144-64ad-4e47-a9a5-2a71617a020f.jpg');
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setBannerImage(event.target?.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const calculateReturn = () => {
     const rate = 0.02;
@@ -25,10 +38,24 @@ const Index = () => {
             <div 
               className="absolute inset-0 opacity-30"
               style={{
-                backgroundImage: `url('https://cdn.poehali.dev/projects/00727451-82f8-48c2-bd07-f013e34b3db1/files/66b29144-64ad-4e47-a9a5-2a71617a020f.jpg')`,
+                backgroundImage: `url('${bannerImage}')`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'right center',
               }}
+            />
+            <button
+              onClick={() => fileInputRef.current?.click()}
+              className="absolute top-4 right-4 z-20 bg-white/90 hover:bg-white p-2 rounded-xl shadow-lg transition-all hover:scale-105"
+              title="Изменить фото"
+            >
+              <Icon name="Image" size={20} className="text-[#1A1F2C]" />
+            </button>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/*"
+              onChange={handleImageUpload}
+              className="hidden"
             />
             <div className="relative z-10">
               <h1 className="text-3xl md:text-5xl font-bold text-[#1A1F2C] mb-4">
